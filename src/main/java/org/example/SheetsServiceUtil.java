@@ -12,6 +12,8 @@ public class SheetsServiceUtil {
     private static final String APPLICATION_NAME = "Google Sheets Example";
 
     public static Sheets getSheetsService() throws IOException, GeneralSecurityException {
+
+        // Use the Credential object to create an instance of Sheets to interact with the Google Sheets API
         Credential credential = GoogleAuthorizeUtil.authorize();
         return new Sheets.Builder(
                 GoogleNetHttpTransport.newTrustedTransport(),
