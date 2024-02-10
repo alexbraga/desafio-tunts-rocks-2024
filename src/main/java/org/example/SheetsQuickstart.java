@@ -15,26 +15,23 @@ public class SheetsQuickstart {
     public static void main(String[] args) throws GeneralSecurityException, IOException {
         final Sheets sheetsService;
         final String SPREADSHEET_ID = "12kWrbO9nUXnaBd88NtwNvT2a5EWuiqCLIjAiD72xKMQ";
-        final String range = "C4:F27";
-        final String studentRange = "B4:B27";
+        final String range = "B4:F27";
 
         sheetsService = SheetsServiceUtil.getSheetsService();
 
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();
 
-        ValueRange studentResponse = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, studentRange).execute();
-        List<List<Object>> students = studentResponse.getValues();
-
         ValueRange updateBody = new ValueRange();
         List<List<Object>> updateData = new ArrayList<>();
 
         for (int i = 0; i < values.size(); i++) {
             List<Object> row = values.get(i);
-            int absences = Integer.parseInt((String) row.get(0));
-            int p1 = Integer.parseInt((String) row.get(1));
-            int p2 = Integer.parseInt((String) row.get(2));
-            int p3 = Integer.parseInt((String) row.get(3));
+            String student = row.get(0).toString();
+            int absences = Integer.parseInt((String) row.get(1));
+            int p1 = Integer.parseInt((String) row.get(2));
+            int p2 = Integer.parseInt((String) row.get(3));
+            int p3 = Integer.parseInt((String) row.get(4));
 
             int totalNumberOfClasses = 60;
             double absencesPercentage = (absences * 1.0 / totalNumberOfClasses) * 100;
@@ -55,9 +52,6 @@ public class SheetsQuickstart {
 
             List<Object> newValues = Arrays.asList(finalGrade, naf);
             updateData.add(newValues);
-
-            List<Object> studentRow = students.get(i);
-            String student = studentRow.get(0).toString();
 
             System.out.println(
                     "Aluno: " + student + ", Situação: " + finalGrade + ", Nota para Aprovação Final: " + naf);
