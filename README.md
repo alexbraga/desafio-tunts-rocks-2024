@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Technical challenge from Tunts.Rocks
+  Tunts.Rocks technical challenge
 </h3>
 
 <p align="center">
