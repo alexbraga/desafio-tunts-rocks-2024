@@ -67,7 +67,7 @@ $ cd desafio-tunts-rocks-2024/
 $ ./gradlew build
 
 # Run the application
-$ java -cp build/classes/java/main org.example.SheetsQuickstart
+$ ./gradlew run
 ```
 
 - Alternatively, open `desafio-tunts-rocks-2024/` with your preferred IDE and run `SheetsQuickstart.java`

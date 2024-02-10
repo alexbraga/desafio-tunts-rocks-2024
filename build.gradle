@@ -4,7 +4,7 @@ apply plugin: 'application'
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
-mainClassName = 'SheetsQuickstart'
+mainClassName = 'org.example.SheetsQuickstart'
 sourceCompatibility = 11
 targetCompatibility = 11
 version = '1.0'
