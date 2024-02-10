@@ -22,18 +22,20 @@ public class GoogleAuthorizeUtil {
 
         // Build GoogleClientSecrets from JSON file
         InputStream in = GoogleAuthorizeUtil.class.getResourceAsStream("/credentials.json");
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(GsonFactory.getDefaultInstance(),
-                                                                     new InputStreamReader(in));
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(
+                GsonFactory.getDefaultInstance(),
+                new InputStreamReader(in));
 
         List<String> scopes = Arrays.asList(SheetsScopes.SPREADSHEETS);
 
         // Build Credential object
-        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(GoogleNetHttpTransport.newTrustedTransport(),
-                                                                                   GsonFactory.getDefaultInstance(),
-                                                                                   clientSecrets,
-                                                                                   scopes).setDataStoreFactory(new MemoryDataStoreFactory())
-                                                                                          .setAccessType("offline")
-                                                                                          .build();
+        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+                GoogleNetHttpTransport.newTrustedTransport(),
+                GsonFactory.getDefaultInstance(),
+                clientSecrets,
+                scopes).setDataStoreFactory(new MemoryDataStoreFactory())
+                       .setAccessType("offline")
+                       .build();
         Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
 
         return credential;
