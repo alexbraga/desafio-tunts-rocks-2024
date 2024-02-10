@@ -45,7 +45,7 @@
 Before getting started, you will need to have the following tools installed on your machine:
 
 - [Git](https://git-scm.com)
-- [Java OpenJDK](https://www.oracle.com/java/technologies/downloads/)
+- [Java OpenJDK 11](https://www.oracle.com/java/technologies/downloads/)
 - [Gradle](https://gradle.org/)
 
 In addition, you might also want an IDE to work with the code, like
@@ -91,7 +91,7 @@ The following tools were used in the construction of the project:
 - Google Sheets API client library
 
 > See the file
-> [build.gradle](https://github.com/alexbraga/desafio-tunts-rocks-2024/blob/master/server/build.gradle)
+> [build.gradle](https://github.com/alexbraga/desafio-tunts-rocks-2024/blob/master/build.gradle)
 
 #### **Utilities**
 
