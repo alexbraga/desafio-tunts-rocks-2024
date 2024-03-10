@@ -7,7 +7,7 @@
 </h3>
 
 <p align="center">
-  <a href="https://github.com/alexbraga/parking-control/commits/master"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alexbraga/desafio-tunts-rocks-2024"></a>
+  <a href="https://github.com/alexbraga/desafio-tunts-rocks-2024/commits/master"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alexbraga/desafio-tunts-rocks-2024"></a>
 </p>
 
 <h4 align="center">
